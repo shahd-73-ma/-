@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLDEN TIME | الرئيسية</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* التنسيقات الأساسية */
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #000;
+            border-bottom: 1px solid #D4AF37;
+        }
+        .logo { font-size: 24px; color: #fff; font-weight: bold; }
+        .logo span { color: #D4AF37; }
+        nav ul { display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; }
+        nav ul li a { text-decoration: none; color: #fff; transition: 0.3s; }
+
+        .hero-section {
+            height: 90vh; /* زدت الارتفاع قليلاً ليناسب الجوال */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('luxury-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .hero-section h1 { font-size: 50px; color: #D4AF37; margin-bottom: 20px; }
+        .hero-section p { font-size: 20px; color: #ccc; max-width: 600px; }
+        .cta-buttons { display: flex; gap: 15px; margin-top: 30px; }
+        
+        .cta-btn {
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #D4AF37;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        .btn-gold { background: #D4AF37; color: #000; }
+        .btn-outline { color: #D4AF37; background: transparent; }
+        .cta-btn:hover { transform: scale(1.05); }
+
+        /* --- تعديلات التجاوب (Media Queries) --- */
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* جعل اللوجو والقائمة فوق بعض */
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 10px;
+                font-size: 14px; /* تصغير الخط قليلاً ليناسب العرض */
+            }
+
+            .hero-section h1 {
+                font-size: 32px; /* تصغير العنوان ليناسب شاشة الجوال */
+            }
+
+            .hero-section p {
+                font-size: 16px; /* تصغير النص الوصفي */
+            }
+
+            .cta-buttons {
+                flex-direction: column; /* جعل الأزرار فوق بعضها في الجوال */
+                width: 100%;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 80%; /* جعل الزر عريضاً ليسهل الضغط عليه */
+                padding: 12px 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 28px;
+            }
+            nav ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr; /* تقسيم الروابط لصفين */
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">GOLDEN<span>TIME</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: #D4AF37;">الرئيسية</a></li>
+                <li><a href="page1.html">الرجالية</a></li>
+                <li><a href="page3.html">النسائية</a></li>
+                <li><a href="page2.html">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h1>عالم من الفخامة بين يديك</h1>
+        <p>اكتشف مجموعتنا الحصرية من الساعات التي تجمع بين الدقة السويسرية والتصميم العصري المذهل.</p>
+        <div class="cta-buttons">
+            <a href="page1.html" class="cta-btn btn-gold">تسوق للرجال</a>
+            <a href="page3.html" class="cta-btn btn-outline">تسوق للسيدات</a>
+        </div>
+    </section>
+
+</body>
+</html>

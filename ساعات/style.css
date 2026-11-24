@@ -1,0 +1,148 @@
+/* إعدادات عامة */
+body {
+    background-color: #0c0c0c; /* أسود فاخر */
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* القائمة العلوية */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #D4AF37; /* ذهبي */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #D4AF37;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #D4AF37;
+}
+
+/* قسم الترحيب */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero-bg.jpg');
+    background-size: cover;
+}
+
+.hero h1 {
+    font-size: 45px;
+    color: #D4AF37;
+}
+
+/* بطاقة الساعة */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 50px 10%;
+}
+
+.product-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: #D4AF37;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #333;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    color: #fff;
+}
+
+.price {
+    color: #D4AF37;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #D4AF37;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #b08d2c;
+}
+/* تأثيرات إضافية للفخامة */
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #D4AF37;
+    color: black;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-card {
+    position: relative; /* لضبط موضع الـ badge */
+    overflow: hidden;
+}
+
+.product-card img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1); /* تكبير الصورة عند تمرير الماوس */
+}
+
+/* تنسيق الروابط عند التمرير */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #D4AF37;
+    transition: width .3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}

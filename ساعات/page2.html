@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | GOLDEN TIME</title>
+    <style>
+        /* التنسيقات العامة */
+        body { 
+            background-color: #0b0b0b; 
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0;
+        }
+        
+        header { 
+            background: #1a1a1a; 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid #333;
+        }
+        
+        .logo { font-size: 22px; font-weight: bold; color: white; text-decoration: none; }
+        .logo span { color: #D4AF37; }
+        
+        nav ul { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
+        nav ul li a { color: white; text-decoration: none; font-size: 14px; transition: 0.3s; }
+        
+        /* حاوية التواصل - Flexbox */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            padding: 60px 10%;
+            flex-wrap: wrap; /* يسمح بالعناصر بالنزول تحت بعضها */
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+            margin: 15px;
+        }
+        
+        .contact-info h2 { color: #D4AF37; font-size: 28px; }
+        .contact-info p { margin: 15px 0; color: #ccc; line-height: 1.6; }
+        
+        /* تنسيق الفورم */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 8px;
+            box-sizing: border-box; /* لضمان عدم خروج الحواف عن الحاوية */
+            font-size: 16px; /* لمنع الزووم التلقائي في الآيفون */
+        }
+        
+        .contact-form input:focus {
+            border-color: #D4AF37;
+            outline: none;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: #D4AF37;
+            color: black;
+            padding: 16px;
+            border: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* --- تنسيقات الجوال (Media Queries) --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* شعار فوق المنيو */
+                gap: 15px;
+                text-align: center;
+            }
+
+            .contact-container {
+                padding: 30px 5%; /* تقليل الحواف في الجوال */
+            }
+
+            .contact-info {
+                text-align: center; /* توسيط النصوص في الجوال */
+                margin-bottom: 40px;
+            }
+
+            .contact-info h2 {
+                font-size: 24px;
+            }
+            
+            nav ul {
+                font-size: 12px;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">GOLDEN<span>TIME</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="page1.html">رجالية</a></li>
+                <li><a href="page3.html">نسائية</a></li>
+                <li><a href="page2.html" style="color: #D4AF37;">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>نحن هنا لمساعدتك</h2>
+            <p>سواء كنت تستفسر عن ساعة معينة أو تحتاج لصيانة، فريقنا جاهز لخدمتك فوراً.</p>
+            <p>📍 الرياض، برج المملكة</p>
+            <p>📞 92000XXXX</p>
+            <p>✉️ mamy_75@icloud.com</p>
+        </div>
+
+        <div class="contact-form">
+            <form id="contactForm">
+                <input type="text" id="userName" placeholder="الاسم الكامل" required>
+                <input type="email" id="userEmail" placeholder="البريد الإلكتروني" required>
+                <textarea id="userMessage" rows="4" placeholder="كيف يمكننا مساعدتك؟"></textarea>
+                
+                <button type="button" class="submit-btn" onclick="sendToWhatsapp()">
+                    إرسال عبر واتساب 💬
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function sendToWhatsapp() {
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const message = document.getElementById('userMessage').value;
+
+            if(name === "" || email === "") {
+                alert("لطفاً، قم بتعبئة الاسم والإيميل");
+                return;
+            }
+
+            // ضع رقمك هنا (رمز الدولة ثم الرقم بدون أصفار)
+            const phoneNumber = "967783862107"; 
+
+            const text = `*طلب تواصل جديد - GOLDEN TIME*%0a` +
+                         `--------------------------%0a` +
+                         `*الاسم:* ${name}%0a` +
+                         `*البريد:* ${email}%0a` +
+                         `*الرسالة:* ${message}`;
+
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+        const text = `*استفسار جديد من متجر GOLDEN TIME* 🇾🇪%0a` +
+             `--------------------------%0a` +
+             `*الاسم:* ${name}%0a` +
+             `*الرسالة:* ${message}`;
+    </script>
+
+</body>
+</html>
